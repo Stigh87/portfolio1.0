@@ -1,0 +1,379 @@
+                                    /* Styles  */
+
+/* Variabler */
+:root {
+    --backgroundColor: rgb(255, 206, 115);
+    --borderInput: solid black 0.1rem;
+    --borderRadius: 99999px;
+    --opacityInput: 80%;
+        --pinShadow: 3px 3px 2px 0px black, -1px 0px 4px 0px inset;
+        --pinHovershadow: 1px -1.5px 2px 0px black, -1px 2px 4px 0px inset;
+        --pinnedTransition: 1s;
+}
+/* Variabler */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+#app {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+input {
+    height: 1.5rem;
+    text-align: center;
+    color: rgb(155, 155, 155);
+    border: var(--borderInput);
+        border-radius: var(--borderRadius);
+    opacity: var(--opacityInput); 
+}
+input:hover {
+    opacity: 100%;
+}
+#password {
+    margin-bottom: 5rem;
+}
+button {
+    height: 2rem;
+    border: var(--borderInput);
+        border-radius: var(--borderRadius);
+    background-color: whitesmoke;
+}
+
+    .animBackground {
+        display: flex;
+        position: relative;
+        background: url(ocean.jpg);
+        height: 100%;
+        width: 100%;
+        top: 0%;
+        left: 0%;
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: repeat-x;
+        -webkit-animation: slide 20s linear infinite;
+        animation: slide 60s linear infinite;
+    }
+        @-webkit-keyframes slide {
+            from {background-position: 0 0;}
+            to {background-position: 100% 0;}
+            /* sett 100% 0; */
+        }
+        @keyframes slide {
+            from {background-position: 0 0;}
+            to {background-position: 100% 0;}
+            /* sett 100% 0; */
+        }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+        #topHeader {
+            text-align: center;
+            opacity: 60%;
+            height: 3rem;
+            font-size: 5rem; 
+        }
+
+        #logInBox {
+            color: whitesmoke;
+            font-size: 1rem;
+            opacity: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .containerOverview {
+            width: 100vw;
+            height: 15vh;
+        }
+
+    #nav {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 2.5em;
+        background: whitesmoke;
+        opacity: var(--opacityInput);
+        overflow: hidden;
+    }    
+        #logOut {
+            right: 0.5rem;
+            width: 5em;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            
+        }
+        #menu {
+            background-image: url(menu.png);
+            background-size: 2rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 2rem;
+            height: 2rem;
+            right: 8.4em;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        #cog {
+            background-image: url(cog.png);
+            background-size: 2rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 2rem;
+            height: 2rem;
+            right: 6em;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        #search {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            transform: translate(0, -50%);
+                flex: 1;
+            }
+            
+    .header {
+        position: absolute;
+        top: 3em;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: whitesmoke;
+        font-size: 2em;
+        opacity: var(--opacityInput);
+    }
+    
+
+    .games0 {
+        height: 7em;
+        width: 7em;
+        /* border: 3px solid black; */
+        margin: 2em;
+        transform: rotate(15deg);
+        text-align: center;
+        opacity: 100%;
+        background-color: whitesmoke;
+        border: 1px solid #BFBFBF;
+        background-color: white;
+        box-shadow: 10px 10px 5px #aaaaaa;
+       
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .games0::before {
+        position: absolute;
+        content: attr(data-value);
+        top: 0.1em;
+        left: 0.1em;
+        width: 0.6em;
+        height: 0.6em;
+        /* border: solid black 1px; */
+        border-radius: 50%;
+        background: red;
+        /* background: radial-gradient(circle, rgba(255,0,0,1) 35%, rgba(0,0,0,1) 45%, rgba(255,36,36,1) 36%, rgba(255,0,0,1) 36%); */
+        box-shadow: var(--pinShadow); 
+    }
+    .games0:hover {
+        height: 8em;
+        width: 8em;
+        transition-duration: var(--pinnedTransition);
+        box-shadow: 10px -10px 5px #5a5a5a;
+    }
+    .games0:hover::before {
+        transition-duration: var(--pinnedTransition);
+        box-shadow: var(--pinHovershadow); 
+    }
+    .games0:not(:hover) {
+        transition-duration: var(--pinnedTransition);
+    }
+    .games1 {
+        height: 7em;
+        width: 7em;
+        /* border: 3px solid black; */
+        margin: 2em;
+        transform: rotate(15deg);
+        text-align: center;
+        opacity: 100%;
+        background-color: whitesmoke;
+        border: 1px solid #BFBFBF;
+        background-color: white;
+        box-shadow: 10px 10px 5px #aaaaaa;
+    }
+    .games1::before {
+        position: absolute;
+        content: attr(data-value);
+        top: 0.1em;
+        left: 0.1em;
+        width: 0.6em;
+        height: 0.6em;
+        /* border: solid black 1px; */
+        border-radius: 50%;
+        background: blue;
+        /* background: radial-gradient(circle, rgba(255,0,0,1) 35%, rgba(0,0,0,1) 45%, rgba(255,36,36,1) 36%, rgba(255,0,0,1) 36%); */
+        box-shadow: var(--pinShadow); 
+    }
+    .games1:hover {
+        height: 8em;
+        width: 8em;
+        transition-duration: var(--pinnedTransition);
+        box-shadow: 10px -10px 5px #5a5a5a;
+    }
+    .games1:hover::before {
+        transition-duration: var(--pinnedTransition);
+        box-shadow: var(--pinHovershadow); 
+    }
+    .games1:not(:hover) {
+        transition-duration: var(--pinnedTransition);
+    }
+    .games2 {
+        height: 7em;
+        width: 7em;
+        /* border: 3px solid black; */
+        margin: 2em;
+        transform: rotate(15deg);
+        text-align: center;
+        opacity: 100%;
+        background-color: whitesmoke;
+        border: 1px solid #BFBFBF;
+        background-color: white;
+        box-shadow: 10px 10px 5px #aaaaaa;
+    }
+    .games2::before {
+        position: absolute;
+        content: attr(data-value);
+        top: 0.1em;
+        left: 0.1em;
+        width: 0.6em;
+        height: 0.6em;
+        /* border: solid black 1px; */
+        border-radius: 50%;
+        background: yellow;
+        /* background: radial-gradient(circle, rgba(255,0,0,1) 35%, rgba(0,0,0,1) 45%, rgba(255,36,36,1) 36%, rgba(255,0,0,1) 36%); */
+        box-shadow: var(--pinShadow); 
+    }
+    .games2:hover {
+        height: 8em;
+        width: 8em;
+        transition-duration: var(--pinnedTransition);
+        box-shadow: 10px -10px 5px #5a5a5a;
+    }
+    .games2:hover::before {
+        transition-duration: var(--pinnedTransition);
+        box-shadow: var(--pinHovershadow); 
+    }
+    .games2:not(:hover) {
+        transition-duration: var(--pinnedTransition);
+    }
+    .games3 {
+        height: 7em;
+        width: 7em;
+        /* border: 3px solid black; */
+        margin: 2em;
+        transform: rotate(15deg);
+        text-align: center;
+        opacity: 100%;
+        background-color: whitesmoke;
+        border: 1px solid #BFBFBF;
+        background-color: white;
+        box-shadow: 10px 10px 5px #aaaaaa;
+    }
+    .games3::before {
+        position: absolute;
+        content: attr(data-value);
+        top: 0.1em;
+        left: 0.1em;
+        width: 0.6em;
+        height: 0.6em;
+        /* border: solid black 1px; */
+        border-radius: 50%;
+        background: green;
+        /* background: radial-gradient(circle, rgba(255,0,0,1) 35%, rgba(0,0,0,1) 45%, rgba(255,36,36,1) 36%, rgba(255,0,0,1) 36%); */
+        box-shadow: var(--pinShadow); 
+    }
+    .games3:hover {
+        height: 8em;
+        width: 8em;
+        transition-duration: var(--pinnedTransition);
+        box-shadow: 10px -10px 5px #5a5a5a;
+    }
+    .games3:hover::before {
+        transition-duration: var(--pinnedTransition);
+        box-shadow: var(--pinHovershadow); 
+    }
+    .games3:not(:hover) {
+        transition-duration: var(--pinnedTransition);
+    }
+        .imgContainer {
+            height: 80%;
+            background-size: cover;
+            border-top: 0.4em solid black;
+            background-color: black;
+        }   
+        .imgContainer, img {
+            opacity: 70%;
+        } 
+        .imgContainer, img:hover {
+            transition-duration: var(--pinnedTransition);
+            opacity: 100%;
+        }
+
+/* .gameContainer {
+    position: absolute;
+    top: 2.5em;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(245, 245, 245, 0.925);
+} */
+
+.gamesContainer {
+    position: absolute;
+    top: 20vh;
+    height: 80vh;
+    width: 100vw;
+    background: rgba(245, 245, 245, 0.7);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.gamesContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+#gameWrapper {
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+}
+
